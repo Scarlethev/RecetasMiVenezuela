@@ -19,12 +19,11 @@
     height: 100vh;
     margin: auto;
     padding: 1em 1em;
-    grid-template-columns: 10% 1fr 10%;
     grid-template-rows: 15% 1fr 1fr 15%;
     grid-template-areas: "encabezado encabezado encabezado"
-        "carousel    carousel  carousel "
-        "cards   cards     cards"
-        "footer     footer   footer";
+                        "carousel    carousel  carousel "
+                         "cards       cards     cards"
+                         "footer     footer   footer";
 
 }
 
@@ -36,7 +35,6 @@
     width: 98vw;
     height: 100vh;
     padding: 1em 1em;
-    grid-template-columns: 10% 1fr 10%;
     grid-template-rows: 15% 1fr 15%;
     grid-template-areas: "encabezado encabezado encabezado"
         "imagenUno   contenidoNosotras imagenDos"
@@ -51,7 +49,6 @@
     width: 98vw;
     height: 100vh;
     padding: 1em 1em;
-    grid-template-columns: 10% 1fr 10%;
     grid-template-rows: 15% 1fr 15%;
     grid-template-areas: "encabezado encabezado encabezado"
         "formulario formulario formulario "
@@ -66,7 +63,6 @@
     width: 98vw;
     height: 100vh;
     padding: 1em 1em;
-    grid-template-columns: 10% 1fr 10%;
     grid-template-rows: 15% 1fr 15%;
     grid-template-areas: "encabezado encabezado encabezado"
         "mainComida mainComida mainComida "
@@ -157,7 +153,8 @@ li {
     position: relative;
     height: 100%;
     width: 100%;
-
+    display: flex;
+     align-items: center;
 
 }
 
@@ -166,30 +163,13 @@ li {
     height: 100%;
     width: 100%;
 
-
 }
 
 .mainComida {
     grid-area: mainComida;
     position: relative;
-    width: 100%;
+    width: auto;
 }
-
-/*.carousel{
-    grid-area:carousel;
-    position: relative;
-    width:100%;
-}
-
-.carousel-inner img {
-    position: relative;
-    height:300px;
-}
-
-.carousel-inner {
-    position:relative;
-    height: 300px;
-}*/
 
 .inline {
     display: flex;
@@ -252,6 +232,7 @@ svg {
 
 .nosotras {
     display: flex;
+ 
         
 }
 
@@ -294,7 +275,7 @@ svg {
     position: relative;
     width: 80%;
     flex-wrap: wrap;
-    min-width: 400px;
+    min-width: 360px;
     row-gap: 10px;
     margin: auto;
     column-gap: 20px;
@@ -337,9 +318,6 @@ svg {
     position: relative;
     width: 100%;
     row-gap: 20px;
-    /*background-image: url(./Imagenes/Background_color-figurasPequeñas.JPG);
-    background-size: contain;
-    background-position: center;*/
 }
 
 .ingreImg {
@@ -414,107 +392,91 @@ svg {
 }
 
 
+@media only screen and (max-width: 1280px) {
+    .ingreImg{
+        width:auto;
+    }
+
+}
+
+
 @media only screen and (max-width: 768px) {
 
-    .body {
+    .body{
         grid-template-areas:
             "encabezado encabezado encabezado"
             "carousel-inner carousel-inner carousel-inner"
             "card1 card2 card3"
             "footer     footer   footer";
-            max-width: 700px;
             width: 768px;
-    }
-    .inline {
-        display: flex;
-        justify-content: center;
-        position: relative;
-        column-gap: 2px;
-        margin-bottom: 1em;
+            height: 100vh;
     }
     
-    .cards {
-        grid-area: cards;
-        flex-wrap: wrap;
+    .bodyNosotras {
+        grid-template-areas: 
+            "encabezado"
+            "imagenUno"
+            "contenidoNosotras"
+            "imagenDos"
+            "footer";
     }
-    
-    
-    
-    
-    .card,
-    .card img {
-        position: relative;
-        width: 210px;
-        height: 200px;
-        object-fit: cover;
-        padding: 1em;
-        justify-items: center;
-    }
-    
-    .card-body {
-        object-fit: cover;
-        text-align: center;
-    }
-    
-    .bodyNosotras{
-        padding: 0px;
-        width: 98vw;
-     }
-     
-
     .nosotras {
-       
-        padding: 0px;
+        padding: 15px;
         align-items: center;
         display: flex;
+        justify-content: center;
         flex-direction: column;
     }
 
+    .bodyComida {
+        display: grid;
+        justify-items: justify;
+        position: relative;
+        width: 768px;
+        height: 100vh;
+        padding: 1em 1em;
+        grid-template-areas: "encabezado encabezado encabezado"
+            "mainComida mainComida mainComida "
+            "footer     footer   footer";
+    }
+
+    .backgroundIngreImg{
+        width:100%;
+
+    }
+
+    .ingreImg{
+        width:auto;
+    }
+
+    .imagenIngredientes img {
+        width: 200px;
+        height: 200px;
+        border-radius: 20px;
+    }
 }
 
 
 @media only screen and (max-width: 390px) {
 
-    .body {
-        margin: 0;
+    .bodyIndex{
         grid-template-areas:
-            "encabezado encabezado encabezado"
-            "carousel-inner carousel-inner carousel-inner"
-            "card1 card1 card1"
-            "card2 card2 card2"
-            "card3 card3 card3"
-            "footer     footer   footer";
-        max-width: 300px;
-        width: 300px;
+            "encabezado"
+            "carousel-inner"
+            "carousel-inner""
+            "card1"
+            "card2"
+            "card3"
+            "footer";
     }
-    
+
+    .card,
     .card img {
         position: relative;
         width: auto;
-        height: 200px;
-        
-        padding: 1em;
+        height: auto;
         justify-items: center;
-    }
-.bodyNosotras{
-    padding: 0px;
-    width: 98vw;
-    
-
-
-}
-    .nosotras {
-        flex-wrap: wrap;
-        padding: 0px;
-        display: flex;
-        flex-direction: column;
-        row-gap: 50px;
-        
-    }
-   
-    .bodyComida {
-        max-width: 300px;
-        width: 300px;
+        margin:5px;
     }
 
     .inline {
@@ -524,29 +486,39 @@ svg {
         flex-direction: center;
     }
 
-   
-
-   
-
-
+    .bodyNosotras{
+    width: 100%;
     
-
-    .comidas {
+}
+    .nosotras {
+        flex-wrap: wrap;
+        padding: 15px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        max-width: 300px;
-        width: 300px;
-        text-align: center;
+        row-gap: 50px;
+        
     }
 
-    .card,
-    .card img {
+    .bodyComida {
+        display: grid;
+        justify-items: justify;
         position: relative;
-        width: 340px;
-        height: 250px;
-        justify-items: center;
+        width:360px;
+        max-width: 360px;
     }
+
+    .contenedorReceta{
+        width:100%;
+    }
+
+    .ingreImg{
+        width:auto;
+    }
+ 
+    .imagenIngredientes img {
+        width:0px;
+        height: 0px;
+    }
+
+
 }
