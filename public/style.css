@@ -411,14 +411,15 @@ svg {
             height: 100vh;
     }
     
-    .bodyNosotras {
+    /*.bodyNosotras {
         grid-template-areas: 
             "encabezado"
             "imagenUno"
             "contenidoNosotras"
             "imagenDos"
             "footer";
-    }
+    }*/
+    
     .nosotras {
         padding: 15px;
         align-items: center;
